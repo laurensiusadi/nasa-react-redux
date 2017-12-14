@@ -1,7 +1,14 @@
-require('./assets/stylesheets/styles.scss');
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app/App.jsx';
+import { Provider } from 'react-redux';
+import Store from './Store';
+import App from './app/App';
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+import './assets/stylesheets/styles.scss';
+
+ReactDOM.render(
+    <Provider store={Store}>
+        <App/>
+    </Provider>,
+    document.getElementById('root')
+);
